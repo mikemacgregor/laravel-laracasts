@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArticlesController;
 use App\Http\Controllers\PostsController;
 
 use Illuminate\Support\Facades\Route;
@@ -27,6 +28,12 @@ Route::get('/about', function () {
         'articles' => App\Models\Article::take(2)->latest()->get()
     ]);
 });
+
+Route::get('/articles/{article}', [ArticlesController::class, 'show']);
+
+
+
+
 
 Route::get('/test', function () {
 
