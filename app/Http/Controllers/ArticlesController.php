@@ -8,14 +8,14 @@ use Illuminate\Http\Request;
 
 class ArticlesController extends Controller
 {
-    public function index()
+    public function index() // list of a resource
     {
         $articles = Article::latest()->get();
 
         return view('articles.index', ['articles' => $articles]);
     }
     
-    public function show($id)
+    public function show($id) // show a single resource
     {
         // dd($articleId);
 
@@ -24,29 +24,29 @@ class ArticlesController extends Controller
         return view('articles.show', ['article' => $article]);
     }
 
-    public function create()
+    public function create() // a view to create a new resource
     {
         
 
         return view('articles.create');
     }
 
-    public function store()
+    public function store() // persist the create form
     {
         dump(request()->all());
     }
 
-    public function edit()
+    public function edit() // a view to edit an existing resource
     {
 
     }
 
-    public function update()
+    public function update() // persist the edit form
     {
         
     }
 
-    public function destroy()
+    public function destroy() // delete a resource
     {
         
     }
