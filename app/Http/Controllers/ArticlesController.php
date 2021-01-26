@@ -8,6 +8,13 @@ use Illuminate\Http\Request;
 
 class ArticlesController extends Controller
 {
+    public function index()
+    {
+        $articles = Article::latest()->get();
+
+        return view('articles.index', ['articles' => $articles]);
+    }
+    
     public function show($id)
     {
         // dd($articleId);
@@ -26,8 +33,21 @@ class ArticlesController extends Controller
 
     public function store()
     {
-        // dd($articleId);
-
         dump(request()->all());
+    }
+
+    public function edit()
+    {
+
+    }
+
+    public function update()
+    {
+        
+    }
+
+    public function destroy()
+    {
+        
     }
 }
