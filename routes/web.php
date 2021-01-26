@@ -29,8 +29,8 @@ Route::get('/about', function () {
     ]);
 });
 
+Route::get('/articles/create', [ArticlesController::class, 'create']);
 Route::get('/articles/{article}', [ArticlesController::class, 'show']);
-
 
 
 
